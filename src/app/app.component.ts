@@ -8,6 +8,17 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
-  title = 'angular-learn';
+  componentName: string = "Angular";
+  name: string = "";
+
+  getName(e: any) {
+    console.log(e.target.value);
+    this.name = e.target.value;
+  }
+  handlClick() {
+   alert(this.name)
+  }
+
 }

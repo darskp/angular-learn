@@ -39,5 +39,6 @@
 <!-- <app-user-profile Username="Darshan1" isSingle="true" age="24"></app-user-profile> -->
 <!-- <app-user-profile Username="Darshan2" isSingle="true" age="25"></app-user-profile> -->
 <!-- <app-user-profile Username="Darshan3" isSingle="true" age="24"></app-user-profile> -->
-<app-user-profile *ngFor="let user of users" [Username]="user.name" [city]="user.city" [status]="user.status">
+<app-user-profile *ngFor="let user of users" [id]="user.id" [Username]="user.name" [city]="user.city" [status]="user.status"
+  (myEvent)="receivedData($event)">
 </app-user-profile>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output, booleanAttribute, numberAttribute } from '@angular/core';
 import { User } from '../../model/type';
+import { CountrycodePipe } from '../../pipes/countrycode.pipe';
 
 function templateName(username: string) {
   return "Hi, " + username + " How are you?"
@@ -12,7 +13,7 @@ function templateName1(Age: String) {
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CountrycodePipe],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })
@@ -21,6 +22,8 @@ export class UserProfileComponent {
   // @Input({ alias: "Username",transform:templateName }) name: string = "";
   // @Input({ alias: "isSingle",transform:booleanAttribute }) SingleStatus!: boolean;
   // @Input({ alias: "age",transform:templateName1}) userAge!: number;
+
+  countrycode=123456789;
 
   @Input({ alias: "Username", transform: templateName }) name: string = "";
   @Input() city: string = "";

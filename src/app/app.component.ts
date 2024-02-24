@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { User } from './model/type';
 import { HighlightDirective } from './directives/highlight.directive';
+import { JokeComponent } from './components/joke/joke.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, UserProfileComponent, HighlightDirective],
+  imports: [RouterOutlet, CommonModule, UserProfileComponent, HighlightDirective,JokeComponent],
   templateUrl: './app.component.html',
   // template:
   //   `<h1> hi</h1>`,

@@ -1,1 +1,35 @@
-<h1>Hello</h1>
+//Interpolation
+<h1>Profile Info</h1>
+<h2>Name : {{name.toLocaleUpperCase()}}</h2>
+<h2>City : {{city}}</h2>
+<h2>Status : {{status}}</h2>
+
+
+//Property Binding
+<div></div>
+<button type="button" class="btn btn-success" [disabled]="isDisabled">Click</button>
+
+<hr>
+//control flow angular 13 version
+<div class="card-body">
+  @for(user of users;track user.id) {
+  @if(user.status=="Single"){
+  <h3>Name - {{user.name}}, City - {{user.city}}, Status - {{user.status}}</h3>
+  }@else{
+  <h3>Hidden</h3>
+  }
+  <hr>
+  }
+</div>
+
+<hr>
+
+//directive
+<div *ngFor="let user of users">
+  <h3 *ngIf="user.status=='Single';else elseBlock">Name - {{user.name}}, City - {{user.city}}, Status - {{user.status}}
+  </h3>
+  <ng-template #elseBlock>
+    <h3>Hidden</h3>
+  </ng-template>
+  <hr>
+</div>

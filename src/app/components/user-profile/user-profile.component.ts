@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, booleanAttribute, numberAttribute } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, SimpleChange, ViewChild, booleanAttribute, numberAttribute } from '@angular/core';
 import { User } from '../../model/type';
 import { CountrycodePipe } from '../../pipes/countrycode.pipe';
 
@@ -23,7 +23,7 @@ export class UserProfileComponent {
   // @Input({ alias: "isSingle",transform:booleanAttribute }) SingleStatus!: boolean;
   // @Input({ alias: "age",transform:templateName1}) userAge!: number;
 
-  countrycode=123456789;
+  countrycode = 123456789;
 
   @Input({ alias: "Username", transform: templateName }) name: string = "";
   @Input() city: string = "";
@@ -32,6 +32,31 @@ export class UserProfileComponent {
   @Output() myEvent = new EventEmitter<User>();
 
   sendData() {
-    this.myEvent.emit({id:this.id, name: this.name, newCityName: "Kumta" })
+    this.myEvent.emit({ id: this.id, name: this.name, newCityName: "Kumta" })
+  }
+
+
+  constructor() {
+    console.log("called constructor", this.name);
+  }
+
+  ngOnChanges(chnages: SimpleChange): void {
+    console.log("called ngOnChanges", this.id)
+    console.log(chnages);
+    ;
+  }
+  ngOnInit() {
+    console.log("called ngOnInit", this.name);
+  }
+  ngOnDestroy() {
+    console.log("called ngOnDestroy");
+  }
+
+
+  //view child 
+  @ViewChild("myheading") heading?: ElementRef
+  ngAfterViewInit() {
+    console.log(this.heading?.nativeElement);
+    
   }
 }

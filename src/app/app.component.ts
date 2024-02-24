@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { User } from './model/type';
+import { HighlightDirective } from './directives/highlight.directive';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,UserProfileComponent],
+  imports: [RouterOutlet, CommonModule, UserProfileComponent,HighlightDirective],
   templateUrl: './app.component.html',
   // template:
   //   `<h1> hi</h1>`,
@@ -14,6 +15,7 @@ import { User } from './model/type';
 })
 
 export class AppComponent {
+  customColor="blue"
   name = "Darshan";
   city = "Bangalore";
   status = "Single";

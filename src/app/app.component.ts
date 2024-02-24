@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,UserProfileComponent],
   templateUrl: './app.component.html',
   // template:
   //   `<h1> hi</h1>`,
@@ -12,10 +13,11 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class AppComponent {
-  name = "Darshan"
-  city = "Bangalore"
-  status = "Single"
-  isDisabled = false
+  name = "Darshan";
+  city = "Bangalore";
+  status = "Single";
+  isDisabled = false;
+  
   users = [
     { id: 1, name: "Darshan1", city: "Bangalore", status: "Single" },
     { id: 2, name: "Darshan2", city: "Mysore", status: "Married" },

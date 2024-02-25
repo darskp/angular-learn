@@ -5,10 +5,12 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { User } from './model/type';
 import { HighlightDirective } from './directives/highlight.directive';
 import { JokeComponent } from './components/joke/joke.component';
+import { AComponent } from './components/a/a.component';
+import { BComponent } from './components/b/b.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, UserProfileComponent, HighlightDirective,JokeComponent],
+  imports: [RouterOutlet, CommonModule, UserProfileComponent, HighlightDirective,JokeComponent,AComponent,BComponent],
   templateUrl: './app.component.html',
   // template:
   //   `<h1> hi</h1>`,
